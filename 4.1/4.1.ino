@@ -1,12 +1,11 @@
 #define SOILSENSOR 2 // PIN 2 is for soilsensor
-#define LED  8  // PIN 8 is for LED
 
 
 void setup() 
 {
   Serial.begin(9600);
   pinMode(SOILSENSOR, INPUT); //declares Soil Sensor as input
-  pinMode(LED, OUTPUT); // declare LED as output
+  pinMode(LED_BUILTIN, OUTPUT); // declare LED as output
 }
 
 void loop() 
@@ -16,12 +15,12 @@ void loop()
   
  if(valeur_soilsensor<300)
   {
-       digitalWrite(LED,1);  // Turn ON the LED
+       digitalWrite(LED_BUILTIN,1);  // Turn ON the LED
        delay(6000);
   }
 else 
   {
   
-       digitalWrite(LED,0); // Turn OFF the LED
+       digitalWrite(LED_BUILTIN,0); // Turn OFF the LED
   }
  }
